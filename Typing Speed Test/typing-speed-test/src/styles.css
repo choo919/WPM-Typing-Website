@@ -187,11 +187,6 @@ th { background: rgba(0,0,0,0.02); font-weight:600; }
   .modal-card { width: 94%; }
 }
 
-/* ...existing code... */
-
-/* ensure each word doesn't break across lines */
-/* ...existing code... */
-
 /* ensure each word doesn't break across lines */
 .word {
   display: inline-block;
@@ -218,4 +213,3 @@ th { background: rgba(0,0,0,0.02); font-weight:600; }
   caret-color: transparent; /* hide the blinking cursor */
 }
 
-/* ...existing code... */
