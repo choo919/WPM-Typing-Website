@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Typing Speed Test</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app">
+    <header class="app-header">
+      <h1>Typing Speed Test</h1>
+      <div class="controls">
+        <label class="toggle">
+          <input id="theme-toggle" type="checkbox" />
+          <span>Dark</span>
+        </label>
+        <label class="toggle">
+          <input id="auto-next" type="checkbox" />
+          <span>Auto Next</span>
+        </label>
+        <button id="reset-btn" class="btn primary">New Round</button>
+        <button id="clear-stats-btn" class="btn">Clear Stats</button>
+      </div>
+    </header>
+
+    <main>
+      <section id="test-area" class="test-area">
+        <div id="text-layer" class="text-layer" aria-hidden="true"></div>
+
+        <!-- transparent textarea sits on top to capture input -->
+        <textarea id="user-input" class="user-input" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"></textarea>
+      </section>
+
+      <aside id="results" class="results">
+        <div class="metrics">
+          <div><strong id="wpm">WPM: —</strong></div>
+          <div><strong id="accuracy">Accuracy: —</strong></div>
+        </div>
+        <div class="letter-stats">
+          <div>Best letter: <span id="best-letter">—</span></div>
+          <div>Worst letter: <span id="worst-letter">—</span></div>
+        </div>
+      </aside>
+    </main>
+
+    <footer class="footer-note">
+      <small>Type through the words. The test completes automatically when you finish the shown words.</small>
+    </footer>
+  </div>
+
+  <!-- completion modal -->
+  <div id="complete-modal" class="modal" aria-hidden="true">
+    <div class="modal-card">
+      <h2>Round Complete</h2>
+      <div class="modal-body">
+        <div class="modal-metrics">
+          <div id="modal-wpm">WPM: —</div>
+          <div id="modal-accuracy">Accuracy: —</div>
+        </div>
+
+        <section class="modal-stats">
+          <h3>Per-letter performance</h3>
+          <div class="modal-actions">
+            <button id="download-csv" class="btn">Download CSV</button>
+            <button id="close-modal" class="btn">Close</button>
+            <button id="next-round" class="btn primary">Next Round</button>
+          </div>
+          <div class="table-wrap">
+            <table id="letter-table">
+              <thead><tr><th>Letter</th><th>Attempts</th><th>Correct</th><th>Rate</th></tr></thead>
+              <tbody></tbody>
+            </table>
+          </div>
+        </section>
+      </div>
+    </div>
+  </div>
+
+  <script type="module" src="script.js"></script>
+</body>
+</html>
